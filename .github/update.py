@@ -199,7 +199,7 @@ try:
         print("hmm looks like there was an error friend!")
 
     directory = "wappalyzer/technologies"
-    output_file = "../data/technologies.json"
+    output_file = "../wappalyzer/data/technologies.json"
     data = {}
     for filename in glob.glob(os.path.join(directory, "*.json")):
         with open(filename, "r") as file:
@@ -208,8 +208,8 @@ try:
     with open(output_file, "w") as file:
         json.dump(data, file, indent=4)
     # move wappalyzer/groups.json and wappalyzer/categories.json to current directory
-    shutil.move("wappalyzer/groups.json", "../data/groups.json")
-    shutil.move("wappalyzer/categories.json", "../data/categories.json")
+    shutil.move("wappalyzer/groups.json", "../wappalyzer/data/groups.json")
+    shutil.move("wappalyzer/categories.json", "../wappalyzer/data/categories.json")
 
 except FileNotFoundError:
     print(f"Error: File '{file_path}' not found.")
